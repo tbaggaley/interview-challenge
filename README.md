@@ -2,7 +2,7 @@
 
 ## Notes
 
-Requested functionality implemented:
+Functionality implemented:
 
 - Fetching items dynamically from API
 - Filtering items on API per search query
@@ -12,9 +12,9 @@ Requested functionality implemented:
 - Header tracks total item count / dietaries count (taking into consideration quantities)
 
 Client -> API layer encapsulated in `useQueryItems` hook which abstracts fetching / loading the data from
-its client component
+its client component.
 
-`menuItems` managed as an ES6 `Map` object (indexed by `id`) to allow for easy insertion / deletion
+`menuItems` managed as an ES6 `Map` object (indexed by `id`) to allow for efficient insertion / deletion (yet still maintaining order).
 
 # Quick Start
 
