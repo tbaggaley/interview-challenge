@@ -28,6 +28,10 @@ const App = () => {
 
   const handleQuantityChange = (item, value) =>
     setMenuItems((menuItems) => {
+      if (!value) {
+        return menuItems;
+      }
+
       const newMenuItems = new Map(menuItems);
       newMenuItems.set(item.id, {
         ...menuItems.get(item.id),
