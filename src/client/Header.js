@@ -21,11 +21,17 @@ const Header = ({ menuItems }) => {
       <div className="container">
         <div className="row">
           <div className="col-6 menu-summary-left">
-            <span>{itemCount} items</span>
+            {itemCount ? (
+              <span>
+                {itemCount} item{itemCount > 1 ? "s" : ""}
+              </span>
+            ) : (
+              <span>No items</span>
+            )}
           </div>
           <div className="col-6 menu-summary-right">
             {[...dietaryCounts].map(([dietary, count]) => (
-              <span key={dietary}>
+              <span key={dietary} data-testid={dietary}>
                 {count} x<span className="dietary">{dietary}</span>
               </span>
             ))}

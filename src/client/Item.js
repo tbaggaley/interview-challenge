@@ -2,12 +2,12 @@ import React from "react";
 
 const Item = ({
   item,
-  item: { name, dietaries, quantity },
+  item: { name, dietaries, quantity, id },
   actionText,
   onAction,
   onQuantityChange,
 }) => (
-  <li className="item">
+  <li className="item" data-testid={`item-${id}`}>
     <h2>{name}</h2>
     {quantity && (
       <label>
