@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useQueryItems } from "./useQueryItems";
 import Item from "./Item";
+import PropTypes from "prop-types";
 
 const SearchBar = ({ value, handleChange }) => (
   <div className="filters">
@@ -12,6 +13,10 @@ const SearchBar = ({ value, handleChange }) => (
     />
   </div>
 );
+SearchBar.propTypes = {
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
 
 const ItemPicker = ({ onAddItem: handleAddItem }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -39,6 +44,10 @@ const ItemPicker = ({ onAddItem: handleAddItem }) => {
       </ul>
     </>
   );
+};
+
+ItemPicker.propTypes = {
+  onAddItem: PropTypes.func.isRequired,
 };
 
 export default ItemPicker;

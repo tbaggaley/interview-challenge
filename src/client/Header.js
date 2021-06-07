@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import PropTypes from "prop-types";
 
 const Header = ({ menuItems }) => {
   const [itemCount, dietaryCounts] = useMemo(() => {
@@ -40,6 +41,10 @@ const Header = ({ menuItems }) => {
       </div>
     </div>
   );
+};
+
+Header.propTypes = {
+  menuItems: PropTypes.instanceOf(Map).isRequired,
 };
 
 export default Header;

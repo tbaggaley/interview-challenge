@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Item = ({
   item,
@@ -35,5 +36,17 @@ const Item = ({
     )}
   </li>
 );
+
+Item.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    dietaries: PropTypes.arrayOf(PropTypes.string).isRequired,
+    quantity: PropTypes.number,
+    name: PropTypes.string.isRequired,
+  }),
+  actionText: PropTypes.string,
+  onAction: PropTypes.func,
+  onQuantityChange: PropTypes.func,
+};
 
 export default Item;
