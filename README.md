@@ -1,23 +1,33 @@
 # Feedr Technical Challenge
 
-Thank you for taking the time to attempt this challenge.
+## Notes
 
-These tests are used to evaluate candidates of all skill levels so please complete them to a level you feel is an accurate representation of your skill set.
+Requested functionality implemented:
 
-Please read `README-FRONTEND.md` for further instructions.
+- Fetching items dynamically from API
+- Filtering items on API per search query
+- Items can be added / deleted from menu
+- Adding duplicate items increases the quantity of the item rather than adding duplicate rows
+- Quantity of each item can be changed
+- Header tracks total item count / dietaries count (taking into consideration quantities)
 
-If you have any questions or would like to clarify any details, please email nick@feedr.co.
+Client -> API layer encapsulated in `useQueryItems` hook which abstracts fetching / loading the data from
+its client component
 
-Good luck!
+`menuItems` managed as an ES6 `Map` object (indexed by `id`) to allow for easy insertion / deletion
 
 # Quick Start
+
 Fork the repository, clone it to your local system, then:
 
 ## Install dependencies
+
 yarn (or npm install)
 
 ## Start development server
+
 yarn dev (or npm run dev)
 
 ## Run tests
+
 yarn test (or npm run test)
