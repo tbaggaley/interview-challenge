@@ -90,7 +90,6 @@ describe("Menu preview app", () => {
 
       const potatoQuantityInput = screen.getByLabelText("Quantity:");
 
-      userEvent.dblClick(potatoQuantityInput);
       userEvent.type(potatoQuantityInput, "0");
       expect(potatoQuantityInput.value).toBe("10");
     });
