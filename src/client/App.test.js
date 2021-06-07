@@ -79,5 +79,20 @@ describe("Menu preview app", () => {
 
       expect(potatoQuantityInput.value).toBe("2");
     });
+
+    it("should allow manually changing the quantity of individual items", () => {
+      setup();
+
+      const addPotatoButton = within(screen.getByTestId("item-1")).getByRole(
+        "button"
+      );
+      userEvent.click(addPotatoButton);
+
+      const potatoQuantityInput = screen.getByLabelText("Quantity:");
+
+      userEvent.dblClick(potatoQuantityInput);
+      userEvent.type(potatoQuantityInput, "0");
+      expect(potatoQuantityInput.value).toBe("10");
+    });
   });
 });
